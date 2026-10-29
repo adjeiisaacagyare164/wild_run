@@ -455,8 +455,8 @@ function frame(timestamp) {
 
 document.getElementById("startButton").addEventListener("click", startGame);
 document.getElementById("restartButton").addEventListener("click", startGame);
-document.getElementById("jumpButton").addEventListener("pointerdown", jump);
-document.getElementById("slideButton").addEventListener("pointerdown", slide);
+document.getElementById("jumpButton").addEventListener("click", jump);
+document.getElementById("slideButton").addEventListener("click", slide);
 pauseButton.addEventListener("click", () => {
     if (game.state === "running") {
         game.state = "paused";
