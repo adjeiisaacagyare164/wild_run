@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#183c35">
+    <title>Snake Runner — Run Wild!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="game-shell">
+        <canvas id="gameCanvas" aria-label="Snake Runner game"></canvas>
+
+        <header class="topbar">
+            <a class="brand" href="#" aria-label="Snake Runner home">
+                <span class="brand-mark" aria-hidden="true">〰</span>
+                <span>WILD<span class="brand-accent">RUN</span></span>
+            </a>
+            <div class="stats" aria-live="polite">
+                <div class="stat"><span class="stat-icon">🍎</span><span id="scoreValue">0</span><small> SCORE</small></div>
+                <div class="stat"><span class="stat-icon">🪙</span><span id="coinValue">0</span><small> COINS</small></div>
+            </div>
+            <button id="pauseButton" class="icon-button" type="button" aria-label="Pause game" hidden>Ⅱ</button>
+        </header>
+
+        <section class="xp-card" aria-label="Experience">
+            <div class="xp-label"><span>GROWING STRONG</span><span id="levelLabel">LVL 1</span></div>
+            <div class="xp-track"><div id="xpFill"></div></div>
+        </section>
+
+        <section id="introPanel" class="modal-card">
+            <div class="eyebrow"><span class="sparkle">✦</span> A LITTLE FOREST ADVENTURE</div>
+            <h1>Snake <span>Runner</span></h1>
+            <p class="intro-copy">Dash through the wildwood, gobble up apples, and stay one step ahead of Adam!</p>
+            <div class="how-to">
+                <div class="how-item"><kbd>↑</kbd><span>Jump over<br>fallen logs</span></div>
+                <div class="how-item"><kbd>↓</kbd><span>Slide under<br>low branches</span></div>
+                <div class="how-item"><span class="how-coin">✦</span><span>Grab coins &<br>crunch apples</span></div>
+            </div>
+            <button id="startButton" class="primary-button" type="button">LET'S SLITHER <span>→</span></button>
+            <p class="mobile-hint">On mobile? Tap the buttons below to move.</p>
+        </section>
+
+        <section id="endPanel" class="modal-card" hidden>
+            <div class="eyebrow"><span class="sparkle">✦</span> WHAT A WILD RIDE</div>
+            <h2 id="endTitle">Run over!</h2>
+            <p id="endMessage" class="intro-copy">Adam caught up this time. Ready for another run?</p>
+            <div class="run-summary">
+                <div><strong id="finalScore">0</strong><span>FINAL SCORE</span></div>
+                <div><strong id="finalCoins">0</strong><span>COINS FOUND</span></div>
+            </div>
+            <button id="restartButton" class="primary-button" type="button">RUN IT BACK <span>→</span></button>
+        </section>
+
+        <div class="touch-controls" aria-label="Touch controls">
+            <button id="jumpButton" type="button" aria-label="Jump">↑<small>JUMP</small></button>
+            <button id="slideButton" type="button" aria-label="Slide">↓<small>SLIDE</small></button>
+        </div>
+        <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    </main>
+    <script src="game.js"></script>
+</body>
+</html>
